@@ -1,0 +1,33 @@
+.container.createquestion
+  %h2 Edit Question
+  %hr/
+  .row
+    .col-md-10
+      = form_tag question_path(@question), :method=> :put do
+        .form-group
+          = label :question, :category, 'Question Category',class: "control-label"
+          = select :question,:category, ['Networks', 'Algorithms', 'Operating Systems', 'Software'],{}, class:"form-control"
+        .form-group
+          = label :question, :question, 'Question',class: "control-label"
+          = text_field :question, 'question', class:"form-control"
+        .form-group
+          = label :question, :option1, 'Option1',class: "control-label"
+          = text_field :question, 'option1', class:"form-control"
+        .form-group
+        = label :question, :option2, 'Option2',class: "control-label"
+        = text_field :question, 'option2', class:"form-control"
+        .form-group
+          = label :question, :option3, 'Option3',class: "control-label"
+          = text_field :question, 'option3', class:"form-control"
+        .form-group
+          = label :question, :option4, 'Option4',class: "control-label"
+          = text_field :question, 'option4', class:"form-control"
+        .form-group 
+          = label :question, :option5, 'Option5',class: "control-label"
+          = text_field :question, 'option5', class:"form-control"
+        .form-group
+          = label :question, :answer, 'Correct Answer',class: "control-label"
+          = text_field :question, 'answer', class:"form-control"
+        .row
+          .form-group.mx-auto
+            = submit_tag 'Save Changes',class: "btn btn-primary"
